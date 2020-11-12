@@ -4,9 +4,7 @@
 source /home/stinkfist/sys-log/login_psswrd.conf
 variables
 source /home/stinkfist/sys-log/libhelp
-
 # Functions======================#
-
 function login(){
 		read -p "Login: " _login
 		read -t 5 -sp "Password: " _pass
