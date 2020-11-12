@@ -1,2 +1,3 @@
 # scripts
-Test
+
+Scripts i'm doing as a beginner.
