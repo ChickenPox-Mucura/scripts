@@ -5,8 +5,6 @@ source /home/stinkfist/sys-log/login_psswrd.conf
 variables
 source /home/stinkfist/sys-log/libhelp
 
-# IN-LINE Call
-
 # Functions======================#
 
 function login(){
