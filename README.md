@@ -1,3 +1,3 @@
 # scripts
 
-Scripts i'm doing as a beginner.
+Shell scripting i'm doing as a beginner.
