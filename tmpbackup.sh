@@ -2,16 +2,17 @@
 
 # Program variables
 
-build_b="/home/stinkfist/backuptmp"
-SBo="compiled"
+build_b="$PWD/tmpbackup"
+SBo="compiled_pkg"
 
 # Root check
 [[ "$UID" -gt "0" ]] && { echo "Permission denied"; exit 1 ;}
 
 # build_b dir check
-[[ ! -d "$build_b" ]] && { echo "creating backuptmp directory..."; mkdir "$build_b" ;}
 
+# Functions
 function backup(){
+	[[ ! -d "$build_b" ]] && { echo "creating backuptmp directory..."; mkdir "$build_b" ;}
 	if cd /tmp; then
 	tar -cvzf "$SBo" *_SBo.tgz && mv -v "$SBo" "$build_b"
 	fi
