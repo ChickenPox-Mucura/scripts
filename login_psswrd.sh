@@ -65,25 +65,3 @@ case "$1" in
 			echo \
 			"-h or --help for assistance"
 esac # Case principal
-
-
-#if [[ "option" -eq "1" ]]; then
-#	leafpad &
-#elif [[ "option" -eq "2" ]]; then
-#	xmms &
-#elif [[ "option" -eq "3" ]]; then
-#	cacafire
-#elif [[ "option" -eq "4" ]]; then
-#	exit 0
-#else
-#	echo "Invalid option!"
-#	exit 1
-#fi
-
-#==========================================
-# Se colocar um "||" no lugar do "&&" ficará:
-# "desde que qualquer um dos dois testes retorne
-# status de saída 0, você estará logado"
-#==========================================
-#
-#

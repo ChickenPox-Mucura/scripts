@@ -12,7 +12,7 @@ function backup(){
 	read -p "Please set up a directory to store your backup (path/to/backup): " build_b
 	[[ ! -d "$build_b" ]] && { echo "creating backuptmp directory..."; mkdir "$build_b" ;}
 	if cd /tmp; then
-	tar -cvzf "$SBo" *_SBo.tgz && { mv -v "$SBo" "$build_b" ;} 
+	tar -cvzf "$SBo" *_SBo.tgz && { mv -v "$SBo" "$build_b" ; sleep 2s ;}
 	clear
 	echo "All files backed up to $build_b directory and compressed to gzip format"
 	fi
