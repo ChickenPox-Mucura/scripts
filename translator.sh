@@ -10,8 +10,12 @@ else
 	{ echo "No internet connection"; sleep 2s; clear; exit 1 ;}
 fi
 
-read -p "Word: " _word
+while true; do
+	read -p "Word: " _word
 
-if [[ -n "$_word" ]]; then
-	translate -t portuguese -f english "$_word"
-fi
+	if [[ -n "$_word" ]]; then
+		translate -t portuguese -f english "$_word"
+	else
+		break
+	fi
+done
