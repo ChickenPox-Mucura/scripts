@@ -4,7 +4,7 @@
 user="stinkfist"
 pass="1234"
 total="0"
-
+PS3="Select a program: "
 # Functions======================#
 function login(){
 	while true; do
@@ -12,8 +12,8 @@ function login(){
 		read -p "Password: " _pass
 		if [[ "$_login" = "stinkfist" ]] && [[ "$_pass" -eq "$pass" ]]; then
 			sleep 1s
-			break
 			clear
+			break
 		else
 			let total++
 			[[ "$total" -eq "3" ]] && { echo "3 failed attempts. Exiting..."; sleep 1s; exit 0 ;} \
@@ -21,17 +21,9 @@ function login(){
 		fi
 	done
 
-		echo \
-			"[Welcome, $user]
-			1) Leafpad
-			2) Gedit
-			3) Sublime
-			4) Leave"
-
-
-		read -p "Select an option: " option
-
-		case "$option" in
+	echo "Welcome, $user"
+	select program in "leafpad" "gedit" "sublime" "exit"; do
+		case "$REPLY" in
 			1)
 				[[ $(type -P leafpad) ]] || { echo "leafpad not found!"; exit 1 ;}
 				leafpad &
@@ -50,6 +42,7 @@ function login(){
 				exit 0
 			;;
 		esac
+	done
 
 }
 
