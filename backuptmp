@@ -1,0 +1,53 @@
+#!/bin/ksh
+
+# # # /tmp backup program # # # #
+# Makes a backup of all the	#
+# _SBo.tgz files in /tmp 	#
+# directory, compressing them to#
+# one file and moving it to the #
+# .backups directory		#
+# # # # # # # # # # # # # # # # #
+#
+# Gabriel Ribeiro 
+# thefourthpillar@protonmail.com
+#
+#
+
+UID="$(id -u)" # User ID number
+
+[ $UID != "0" ] && { print "You need to be root! Exiting..."; sleep 2s; exit 1 ;}
+
+print "Name your backup file: "
+read _bkp
+
+# Program functions
+function _user
+{
+	print "Which USER is going to be the owner"
+	read _owner
+}
+
+function backup
+{
+	[ ! -d $HOME/.backups ] && mkdir $HOME/.backups
+	
+	tar cfv $_bkp.tgz /tmp/*_SBo.tgz
+
+	if [ $_owner != "root" ]; then
+		[ ! -d /home/$_owner/.backups ] && mkdir -v /home/$_owner/.backups
+		mv -v $_bkp.tgz /home/$_owner/.backups
+	else
+		mv -v $_bkp.tgz $HOME/.backups
+	fi
+
+	sleep 1s && { clear; print "Backup done." ;}
+}
+
+_user
+
+while [ ! -d /home/$_owner ]; do # Checks if _owner variable is valid
+	print "Non-existent user. Please, try again."
+	_user
+done
+
+backup
