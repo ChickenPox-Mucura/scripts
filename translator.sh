@@ -1,17 +1,16 @@
-#!/usr/bin/env bash
+#!/bin/ksh
 
-echo "Welcome to Google Translate!"
-echo "Verifying your internet connection..."
+print "Welcome to Google Translate!"
+print "Verifying your internet connection..."
 
 if wget -q --spider www.pudim.com.br; then
-	echo ""
 	clear
 else
-	{ echo "No internet connection"; sleep 2s; clear; exit 1 ;}
+	{ print "No internet connection"; sleep 2s; clear; exit 1 ;}
 fi
 
 while true; do
-	read -p "Word: " _word
+	read _word?"Word: " 
 
 	if [[ -n "$_word" ]]; then
 		translate -t portuguese -f english "$_word"
