@@ -1,11 +1,11 @@
 #!/bin/ksh
 
-# ========= /tmp backup program =========== #
-# Makes a backup of all the _SBo.tgz files  #
-# in /tmp directory, compressing them to    #
-# one file and moving it to user's .backups #
+# ========= /tmp backup program ===========  #
+# Makes a backup of all the _SBo.tgz files   #
+# in /tmp directory, compressing them to     #
+# one file and moving it to user's .backups  #
 # directory.				     #
-# ========================================= #
+# =========================================  #
 #
 # Gabriel C. Ribeiro
 # thefourthpillar@protonmail.com
