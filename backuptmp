@@ -4,7 +4,7 @@
 # Makes a backup of all the _SBo.tgz files  #
 # in /tmp directory, compressing them to    #
 # one file and moving it to user's .backups #
-# directory.				    #
+# directory.				     #
 # ========================================= #
 #
 # Gabriel Ribeiro 
