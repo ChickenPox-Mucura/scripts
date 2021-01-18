@@ -21,7 +21,7 @@ read _bkp?"Name your backup file: "
 # Program functions
 function _user
 {
-	read _owner?"Which USER is going to be the owner? "
+	read _owner?"Which USER is going to be the owner"
 }
 
 function backup
