@@ -13,7 +13,7 @@ while true; do
 	read _word?"Word: " 
 
 	if [[ -n "$_word" ]]; then
-		translate -t portuguese -f english "$_word"
+		translate -t pt-BR -f en-US "$_word"
 	else
 		break
 	fi
