@@ -1,0 +1,11 @@
+#!/bin/ksh
+
+batstatus=$(acpi | cut -b '24 25 26 27')
+batcharge=$(acpi | cut -b '21 22 23 24')
+
+
+if [ $(acpi | cut -b '12 13 14 15') == "Char" ]; then
+	print "$batcharge"
+else
+	print "$batstatus"
+fi
