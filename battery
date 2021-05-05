@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-batstatus=$(acpi | cut -b '25 26 27 28')
+batstatus=$(acpi | cut -b '25 26 27')
 batcharge=$(acpi | cut -b '23 24 25')
 
 
