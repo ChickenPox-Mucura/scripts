@@ -1,5 +1,5 @@
 # scripts
  
-Shell scripting exercises and utilities for dwm
+Shell scripting exercises and utilities for ratpoison/dunst
 
 
